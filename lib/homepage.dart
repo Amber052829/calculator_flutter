@@ -43,6 +43,14 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  void clear() {
+    setState(() {
+      t1.text = "0";
+      t2.text = "0";
+      res = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -102,6 +110,17 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.teal,
                     onPressed: div,
                   ),
+                ],
+              ),
+              new Padding(padding: const EdgeInsets.only(top: 20.0)),
+              new Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  new MaterialButton(
+                    child: new Text("Clear"),
+                    color: Colors.teal,
+                    onPressed: clear,
+                  )
                 ],
               )
             ],
